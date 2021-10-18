@@ -7,15 +7,18 @@ class BinaryNode():
     """
     """
 
-    __slots__ = ["__left_node", "__right_node", "__value"]
+    __slots__ = [
+        "__left_node", "__parent_node", "__right_node", "__value"
+    ]
 
-    def __init__(self, value):
+    def __init__(self, value, parent_node=None):
 
         if not isinstance(value, (int, float)):
             raise ValueError("Value must be of type int or float.")
 
         # Set Values
         self.__left_node = None
+        self.__parent_node = parent_node
         self.__right_node = None
         self.__value = value
 
@@ -29,7 +32,19 @@ class BinaryNode():
     def get_height(self):
         """
         """
-        left_height = 
+
+        # Fetch the left node height
+        left_node_height = 1
+        if self.__left_node is not None:
+            left_node_height += max(self.__left_node.get_height())
+
+        # Fetch the right node height
+        right_node_height = 1
+        if self.__right_node is not None:
+            right_node_height += max(self.__right_node.get_height())
+
+        # Return a tuple
+        return (left_node_height, right_node_height)
 
     def get_value(self):
         """

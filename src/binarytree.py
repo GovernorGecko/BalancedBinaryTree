@@ -21,6 +21,13 @@ class BinaryTree():
         """
         return str(self.__root)
 
+    def get_height(self):
+        """
+        """
+        if self.__root is not None:
+            return self.__root.get_height()
+        return 0
+
     def insert_value(self, value):
         """
         """
@@ -33,3 +40,8 @@ class BinaryTree():
             self.__root.insert_node(BinaryNode(value))
 
         # We balanced?
+        left_node_height, right_node_height = self.get_height()
+
+        # Can't be more than 1 difference
+        if abs(left_node_height - right_node_height) > 1:
+            print("YEAP")

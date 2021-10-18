@@ -10,7 +10,10 @@ from src.binarytree import BinaryTree
 # print(bn)
 
 bt = BinaryTree()
-bt.insert_value(1)
-bt.insert_value(10)
 bt.insert_value(4)
+bt.insert_value(1)
+bt.insert_value(3)
+bt.insert_value(2)
+bt.insert_value(10)
 print(bt)
+print(bt.get_height())
