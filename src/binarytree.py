@@ -44,4 +44,5 @@ class BinaryTree():
 
         # Can't be more than 1 difference
         if abs(left_node_height - right_node_height) > 1:
-            print("YEAP")
+            print(left_node_height)
+            print(right_node_height)
